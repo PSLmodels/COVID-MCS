@@ -57,6 +57,7 @@ class COVID_MCS_TEST:
         n = list(map(int, n))
         y1 = self.params.NumPositive[0].get('value').split(',')
         alpha = self.params.Alpha[0].get('value')
+        alpha = float(alpha)
         ceil = np.float64(self.params.Ceil[0].get('value'))
         lag = self.params.Lag[0].get('value')
         seed = self.params.Seed[0].get('value')
@@ -77,7 +78,7 @@ class COVID_MCS_TEST:
         z = r1['mcs_shapes'](t = ro.IntVector(t), n =  ro.IntVector(n), y1 = ro.IntVector(y1),
                              shape=  ro.StrVector(shapes), ceiling = float(ceil), lag = float(lag))
         zb = r1['mcs_shapes_boot'](z = z, nsim = float(nsim), seed = seed)
-        m = r1['mcs_shapes_test'](z, zb, nested = False, alpha = .1)
+        m = r1['mcs_shapes_test'](z, zb, nested = False, alpha = alpha)
 
 
         # Convert R DataFrame to Pandas DataFrame
