@@ -32,39 +32,15 @@
       }
     ],
     "validators": {}
-  },
-  "Days":{
-    "title": "Indicies demarking unique days",
-    "description": "List of numbers indicating days, separated by a comma.",
-    "type": "str",
+  },"Tests":{
+    "title": "Tests",
+    "description": "Total number of tests and positive tests on a unique day.",
+    "type": "int",
     "section_1": "Model Inputs",
+    "number_dims": 2,
     "value": [
       {
-        "value" : "1,2,3"
-      }
-    ],
-    "validators": {}
-  },
-  "NumTests":{
-    "title": "Number of tests",
-    "description": "Total number of tests on a unique day, separated by a comma.",
-    "type": "str",
-    "section_1": "Model Inputs",
-    "value": [
-      {
-        "value" : "500,500,500"
-      }
-    ],
-    "validators": {}
-  },
-  "NumPositive":{
-    "title": "Number of positive tests",
-    "description": "Total number of positive tests on a unique day, separated by a comma.",
-    "type": "str",
-    "section_1": "Model Inputs",
-    "value": [
-      {
-        "value" : "100,300,200"
+        "value" : [[500, 100], [500, 300], [500, 200], [500, 100]]
       }
     ],
     "validators": {}

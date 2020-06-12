@@ -10,15 +10,9 @@ class TestFunctions1(CoreTestFunctions):
     run_model = functions.run_model
     ok_adjustment = {
         "Model Parameters" : {
-              "Days": [
-                {"value": "1,2,3,4,5,6,7,8,9"}
-              ],
-              "NumTests":[
-                {"value" : "1000,1000,2000,2000,3000,3000,4000,4000,5000"}
-              ],
-              "NumPositive":[
-                {"value" : "500,500,700,700,1000,1000,1500,1500,3000"}
-              ]
+               "Tests":[
+                 {"value" : [[500, 100], [500, 300], [500, 200], [500, 100]]}
+               ]
         }
     }
     bad_adjustment = {

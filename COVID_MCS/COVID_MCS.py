@@ -24,7 +24,8 @@ base = rp.importr("base")
 dplyr = rp.importr("dplyr")
 
 
-
+def Extract(lst, n):
+    return [item[n] for item in lst]
 
 
 CURRENT_PATH = os.path.abspath(os.path.dirname(__file__))
@@ -51,11 +52,12 @@ class COVID_MCS_TEST:
     def MCS_Test(self):
         nested = self.params.Nested[0].get('value')
         shapes = self.params.Shapes[0].get('value').split(', ')
-        t = self.params.Days[0].get('value').split(',')
-        t = list(map(int, t))
-        n = self.params.NumTests[0].get('value').split(',')
+        lst = self.params.Tests[0].get('value')
+        n = Extract(lst, 0)
         n = list(map(int, n))
-        y1 = self.params.NumPositive[0].get('value').split(',')
+        y1 = Extract(lst, 1)
+        y1 = list(map(int, y1))
+        t = list(range(1,len(n) + 1))
         alpha = self.params.Alpha[0].get('value')
         alpha = float(alpha)
         ceil = np.float64(self.params.Ceil[0].get('value'))
@@ -63,9 +65,6 @@ class COVID_MCS_TEST:
         seed = self.params.Seed[0].get('value')
         seed = float(seed)
         nsim = self.params.nsim[0].get('value')
-
-        print(mcs_shapes)
-
         if seed == 0:
             seed = ro.r("NULL")
 
@@ -96,3 +95,7 @@ class COVID_MCS_TEST:
 
 
         return output, pdf
+
+
+c = COVID_MCS_TEST()
+c.MCS_Test()
