@@ -10,7 +10,7 @@
 
   },
   "Nested":{
-    "title": "Models Are Nested",
+    "title": "Models Are nested",
     "description": "Models are ordered in least to most specific. If unsure, assume that they are not.",
     "type": "bool",
     "section_1": "Model Inputs",
@@ -22,7 +22,7 @@
     "validators": {}
   },
   "Shapes":{
-    "title": "Shapes to Test",
+    "title": "Shapes to test",
     "description": "See README for full description. Possible shapes include cei, con, con_cei, dec, dec_cei, inc, inc_cei, ius, ius_cei, and unr",
     "type": "str",
     "section_1": "Model Inputs",
@@ -46,7 +46,7 @@
     "validators": {}
   },
   "NumTests":{
-    "title": "Number of Tests",
+    "title": "Number of tests",
     "description": "Total number of tests on a unique day, separated by a comma.",
     "type": "str",
     "section_1": "Model Inputs",
@@ -58,7 +58,7 @@
     "validators": {}
   },
   "NumPositive":{
-    "title": "Number of Positive Tests",
+    "title": "Number of positive tests",
     "description": "Total number of positive tests on a unique day, separated by a comma.",
     "type": "str",
     "section_1": "Model Inputs",
@@ -133,7 +133,7 @@
     "validators": {}
   },
   "nsim":{
-    "title": "Number of Simulations",
+    "title": "Number of simulations",
     "description": "Number of bootstrap replications to be generated",
     "type": "float",
     "section_1": "Model Inputs",
