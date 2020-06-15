@@ -49,7 +49,7 @@ def run_model(meta_param_dict, adjustment):
     params = params.adjust(adjustment['Model Parameters'])
 
     c = COVID_MCS_TEST(adjustment = params)
-    model_output, summary = c.MCS_Test()
+    model_output, summary, shapes = c.MCS_Test()
 
     to_print = 'Testing at level ' + str(model_output['alpha'][0]) + ' with ' + str(model_output['B'][0]) + ' bootstraps' + \
     '<br><br>' + ' Final models:<br> ' + (', '.join(model_output['Mstar'])) + '<br><br> Summary<br>'

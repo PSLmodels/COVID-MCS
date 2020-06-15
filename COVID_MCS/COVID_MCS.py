@@ -68,6 +68,12 @@ class COVID_MCS_TEST:
         if seed == 0:
             seed = ro.r("NULL")
 
+        if nested:
+            nest = ro.vectors.BoolVector([True])
+        else:
+            nest = ro.vectors.BoolVector([False])
+
+
         # Intitalize R object and source main
         r1 = ro.r
         r1['source'](mcs_shapes)
@@ -77,7 +83,7 @@ class COVID_MCS_TEST:
         z = r1['mcs_shapes'](t = ro.IntVector(t), n =  ro.IntVector(n), y1 = ro.IntVector(y1),
                              shape=  ro.StrVector(shapes), ceiling = float(ceil), lag = float(lag))
         zb = r1['mcs_shapes_boot'](z = z, nsim = float(nsim), seed = seed)
-        m = r1['mcs_shapes_test'](z, zb, nested = False, alpha = alpha)
+        m = r1['mcs_shapes_test'](z, zb, nested = nest, alpha = alpha)
 
 
         # Convert R DataFrame to Pandas DataFrame
@@ -93,9 +99,9 @@ class COVID_MCS_TEST:
         with localconverter(ro.default_converter + pandas2ri.converter):
             pdf = ro.conversion.rpy2py(rdf)
 
+        with localconverter(ro.default_converter + pandas2ri.converter):
+            shapes = ro.conversion.rpy2py(z)
 
-        return output, pdf
+        shapes = dict(zip(shapes.names, map(list,list(shapes))))
 
-
-c = COVID_MCS_TEST()
-c.MCS_Test()
+        return output, pdf, shapes
