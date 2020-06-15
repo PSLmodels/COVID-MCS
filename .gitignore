@@ -1,0 +1,4 @@
+__pycache__/
+.Rhistory
+.ipynb_checkpoints
+COVID_MCS.egg-info/

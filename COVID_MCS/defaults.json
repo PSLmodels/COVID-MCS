@@ -1,0 +1,128 @@
+{
+  "schema": {
+    "labels":{},
+    "additional_members": {
+            "section_1": {
+                "type": "str",
+                "number_dims": 0
+            }
+        }
+
+  },
+  "Nested":{
+    "title": "Models Are nested",
+    "description": "Models are ordered in least to most specific. If unsure, assume that they are not.",
+    "type": "bool",
+    "section_1": "Model Inputs",
+    "value": [
+      {
+        "value" : false
+      }
+    ],
+    "validators": {}
+  },
+  "Shapes":{
+    "title": "Shapes to test",
+    "description": "See README for full description. Possible shapes include cei, con, con_cei, dec, dec_cei, inc, inc_cei, ius, ius_cei, and unr",
+    "type": "str",
+    "section_1": "Model Inputs",
+    "value": [
+      {
+        "value" : "dec_cei, unr"
+      }
+    ],
+    "validators": {}
+  },"Tests":{
+    "title": "Tests",
+    "description": "Total number of tests and positive tests on a unique day.",
+    "type": "int",
+    "section_1": "Model Inputs",
+    "number_dims": 2,
+    "value": [
+      {
+        "value" : [[500, 100], [500, 300], [500, 200], [500, 100]]
+      }
+    ],
+    "validators": {}
+  },
+  "Alpha":{
+    "title": "Alpha",
+    "description": "Significance level for the test",
+    "type": "float",
+    "section_1": "Model Inputs",
+    "value": [
+      {
+        "value" : 0.95
+      }
+    ],
+    "validators": {
+      "range":{
+        "min": 0,
+        "max" : 1
+      }
+    }
+  },
+  "Ceil":{
+    "title": "Ceiling",
+    "description": "Sets the ceilieng for the relevant shape constraints",
+    "type": "float",
+    "section_1": "Model Inputs",
+    "value": [
+      {
+        "value" : 1
+      }
+    ],
+    "validators": {
+      "range":{
+        "min": 0,
+        "max" : 1
+      }
+    }
+  },
+  "Lag":{
+    "title": "Lag",
+    "description": "Permits comparisons across proportions more than this number of days apart",
+    "type": "float",
+    "section_1": "Model Inputs",
+    "value": [
+      {
+        "value" : 1
+      }
+    ],
+    "validators": {
+      "range":{
+        "min": 0,
+        "max" : 9e99
+      }
+    }
+  },
+  "Seed":{
+    "title": "Seed",
+    "description": "Sets a seed for the purposes of replication. Leave as 0 for a random seed.",
+    "type": "float",
+    "section_1": "Model Inputs",
+    "value": [
+      {
+        "value" : 0
+      }
+    ],
+    "validators": {}
+  },
+  "nsim":{
+    "title": "Number of simulations",
+    "description": "Number of bootstrap replications to be generated",
+    "type": "float",
+    "section_1": "Model Inputs",
+    "value": [
+      {
+        "value" : 100
+      }
+    ],
+    "validators": {
+      "range":{
+        "min":1,
+        "max": 9e99
+      }
+    }
+  }
+}
