@@ -3,8 +3,7 @@
 
 ### Introduction
 
-COVID-MCS is an R package that allows users to apply the model confidence set (MCS) hypothesis testing framework developed in Hansen et. al (2011) to public health data in an effort to test hypotheses surrounding questions about temporal trends in the data. See [Ganz (2020)](https://www.aei.org/profile/scott-c-ganz/) for more details on the implementation of the test, and the [Github](https://github.com/PSLmodels/COVID-MCS) for all underlying code.
-
+COVID-MCS is an R package that allows users to apply the model confidence set (MCS) hypothesis testing framework developed in Hansen et. al (2011) to public health data in an effort to test hypotheses surrounding questions about temporal trends in the data. See [Ganz (2020)](https://www.aei.org/profile/scott-c-ganz/) for more details on the implementation of the test.
 ### Why COVID-MCS?
 
 Policymakers and public health researchers have had difficulty determining whether benchmarks surrounding trends in the intensity of the COVID-19 pandemic. One reason for the confusion is that commonly-used hypothesis testing methods, e.g., t-tests for mean comparisons or linear regression models, are poorly suited for questions about shapes of trends in data, e.g., “consistent decline”.
