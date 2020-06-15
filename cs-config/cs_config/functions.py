@@ -59,6 +59,8 @@ def run_model(meta_param_dict, adjustment):
     t = [table]
     t = t + plots
 
+    print(to_print)
+
     out = {
         "renderable": t,
         "downloadable": [{

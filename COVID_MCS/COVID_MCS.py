@@ -177,9 +177,9 @@ class COVID_MCS_TEST:
         unr = unr.get('mean')
 
         model_means['Daily Avg.'] = unr
-
         # Create plots for each user-inputted shape:
-        for i in list(range(1,len(n))):
+        for i in list(range(1,len(tshapes))):
+            print("HERE" + str(i))
             mod = means.get('model')[i]
             with localconverter(ro.default_converter + pandas2ri.converter):
                 mod = ro.conversion.rpy2py(mod)
