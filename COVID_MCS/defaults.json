@@ -23,12 +23,12 @@
   },
   "Shapes":{
     "title": "Shapes to test",
-    "description": "See README for full description. Possible shapes include cei, con, con_cei, dec, dec_cei, inc, inc_cei, ius, ius_cei, and unr",
+    "description": "See README for full description. Possible shapes include cei, con, con_cei, dec, dec_cei, inc, inc_cei, ius, ius_cei. The model always includes unrestricted.",
     "type": "str",
     "section_1": "Model Inputs",
     "value": [
       {
-        "value" : "dec_cei, unr"
+        "value" : "con, dec, ius"
       }
     ],
     "validators": {}

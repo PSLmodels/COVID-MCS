@@ -49,24 +49,22 @@ def run_model(meta_param_dict, adjustment):
     params = params.adjust(adjustment['Model Parameters'])
 
     c = COVID_MCS_TEST(adjustment = params)
-    model_output, summary, shapes = c.MCS_Test()
+    to_print, means, plots = c.MCS_Test()
+    table = {
+        "media_type": "table",
+        "title": "Model Outputs",
+        "data": to_print
+    }
 
-    to_print = 'Testing at level ' + str(model_output['alpha'][0]) + ' with ' + str(model_output['B'][0]) + ' bootstraps' + \
-    '<br><br>' + ' Final models:<br> ' + (', '.join(model_output['Mstar'])) + '<br><br> Summary<br>'
-
-    to_print = to_print + summary.to_html(index = False)
+    t = [table]
+    t = t + plots
 
     out = {
-        "renderable": [{
-            "media_type": "table",
-            "title": "Model Outputs",
-            "data": to_print
-        }],
+        "renderable": t,
         "downloadable": [{
             "media_type": "CSV",
             "title": "Model Summary",
-            "data": summary.to_csv()
+            "data": means.to_csv()
         }]
     }
-
     return(out)
