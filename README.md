@@ -16,7 +16,7 @@ These results can then be used to inform policy decisions about whether necessar
 
 #### Analyze data from your web browser
 
-* The easiest way to apply this methodology is to use the web application hosted on [Compute Studio](https://compute.studio/burkeob/COVID-MCS/).
+* The easiest way to apply this methodology is to use the web application hosted on [Compute Studio](https://compute.studio/PSLmodels/COVID-MCS/).
 
 #### Analyze data using your own computer
 
