@@ -1,5 +1,5 @@
 {
-  "Tests":[
-    {"value" : [[500, 100], [500, 200], [500, 250], [500, 300]]}
+  "Shapes":[
+    {"value" : "con, dec, ius, con_cei, dec_cei"}
   ]
 }

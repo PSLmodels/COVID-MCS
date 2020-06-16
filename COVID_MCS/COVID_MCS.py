@@ -125,11 +125,12 @@ class COVID_MCS_TEST:
                 rejected_shapes.append(i)
 
         to_print = 'Testing at level ' + str(output['alpha'][0]) + ' with ' + str(output['B'][0]) + ' bootstraps' + \
-            '<br><br>' + ' The final models in the model confidence set (MCS) are '
+            '<br><br>' + ' The final models in the model confidence set (MCS) are :'
 
 
         for i in output['Mstar'] :
-            to_print = to_print + shape_dict.get(i) + " "
+            to_print = to_print + shape_dict.get(i) + ", "
+        to_print = to_print + "."
 
 
         if len(rejected_shapes) > 0:
@@ -147,7 +148,6 @@ class COVID_MCS_TEST:
                 else:
                     to_print = to_print + ", " + shape_dict.get(i)
                     x+=1
-
 
 
         if len(tshapes) == 4 and 'unr' in tshapes and 'con' in tshapes and 'ius' in tshapes and 'dec' in tshapes:
@@ -179,7 +179,6 @@ class COVID_MCS_TEST:
         model_means['Daily Avg.'] = unr
         # Create plots for each user-inputted shape:
         for i in list(range(1,len(tshapes))):
-            print("HERE" + str(i))
             mod = means.get('model')[i]
             with localconverter(ro.default_converter + pandas2ri.converter):
                 mod = ro.conversion.rpy2py(mod)
