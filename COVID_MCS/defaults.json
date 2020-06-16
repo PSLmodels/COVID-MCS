@@ -23,7 +23,7 @@
   },
   "Shapes":{
     "title": "Shapes to test",
-    "description": "See README for full description. Possible shapes include cei, con, con_cei, dec, dec_cei, inc, inc_cei, ius, ius_cei. The model always includes unrestricted.",
+    "description": "See README for full description. Possible models include cei, con, con_cei, dec, dec_cei, inc, inc_cei, ius, ius_cei. The test always includes a unrestricted model.",
     "type": "str",
     "section_1": "Model Inputs",
     "value": [
@@ -33,14 +33,16 @@
     ],
     "validators": {}
   },"Tests":{
-    "title": "Tests",
+    "title": "COVID Test Data",
     "description": "Total number of tests and positive tests on a unique day.",
     "type": "int",
     "section_1": "Model Inputs",
     "number_dims": 2,
     "value": [
       {
-        "value" : [[500, 100], [500, 300], [500, 200], [500, 100]]
+        "value" : [[1000, 100], [1000, 100], [1000, 100], [1000, 100],
+        [1000, 100], [1000, 100], [1000, 100], [1000, 100], [1000, 100],
+        [1000, 100], [1000, 100], [1000, 100], [1000, 100], [1000, 100] ]
       }
     ],
     "validators": {}
