@@ -10,7 +10,7 @@
 
   },
   "Nested":{
-    "title": "Models are nested",
+    "title": "Models are nested?",
     "description": "Models are ordered in least to most specific. If unsure, assume that they are not.",
     "type": "bool",
     "section_1": "Model Inputs",
@@ -111,7 +111,7 @@
     "validators": {}
   },
   "nsim":{
-    "title": "Number of simulations",
+    "title": "Number of bootstrap samples",
     "description": "Number of bootstrap replications to be generated",
     "type": "float",
     "section_1": "Model Inputs",
