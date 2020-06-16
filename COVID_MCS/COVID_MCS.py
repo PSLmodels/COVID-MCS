@@ -129,7 +129,8 @@ class COVID_MCS_TEST:
 
 
         for i in output['Mstar'] :
-            to_print = to_print + shape_dict.get(i) + " "
+            to_print = to_print + shape_dict.get(i) + ", "
+        to_print = to_print + "."
 
 
         if len(rejected_shapes) > 0:
